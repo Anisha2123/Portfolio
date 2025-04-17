@@ -1,0 +1,357 @@
+
+
+
+@import "tailwindcss";
+
+
+body{
+  padding-top: 4rem;
+}
+.main{
+  width: 100%;
+  /* border:1px solid red; */
+}
+
+/* App.css */
+:root {
+  --primary: #4f46e5;
+  --secondary: #7c3aed;
+  --bg: #f9fafb;
+  --text: #1f2937;
+  --text-muted: #6b7280;
+  --bg-dark: #111827;
+  --text-dark: #f9fafb;
+  --transition: all 0.4s ease;
+}
+
+body.light {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* =========================Home ===============================================*/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 1.5s ease-in;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.animate-slide-up {
+  animation: slide-up 1.2s ease-in-out;
+}
+/* ======================Navbar======================== */
+
+/* Navbar Styles */
+.navbar-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  /* background-color: black; */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 8px 16px rgba(236, 72, 153, 0.15);
+  transition: all 0.3s ease;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.navbar-logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ec4899, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 600;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ec4899;
+}
+
+.nav-link .underline {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #ec4899;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover .underline {
+  width: 100%;
+}
+
+.resume-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ec4899;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: #db2777;
+  transform: scale(1.05);
+}
+
+.mobile-menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive + Animated Dropdown */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    transform: translateY(-200%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateY(0%);
+  }
+
+  .resume-btn {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+}
+
+/* ===============================Skills==================== */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out both;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out both;
+}
+
+/* Title fade-in animation */
+@keyframes title-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Description slide-up animation */
+@keyframes description-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card fade-in animation */
+@keyframes card-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in animation to the title */
+.animate-title-fade-in {
+  animation: title-fade-in 1.2s ease-out forwards;
+}
+
+/* Apply slide-up animation to the description */
+.animate-description-slide-up {
+  animation: description-slide-up 1s ease-out forwards;
+}
+
+/* Apply fade-in animation to each skill card */
+.animate-card-fade-in {
+  animation: card-fade-in 1s ease-out forwards;
+}
+
+/* Dark mode adjustments */
+.dark .text-gray-600 {
+  color: #d1d5db; /* Light gray text in dark mode */
+}
+
+/* ===========================Projects====================== */
+/* @keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1.2s ease-out forwards;
+} */
+
+/* ===========================Resume========================== */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.group-hover\\:animate-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 1.5s infinite;
+}
+
+/* ===============================Contact========================== */
+
+/* @layer utilities {
+  .animate-fade-in-up {
+    @apply opacity-0 translate-y-6 animate-[fadeInUp_0.7s_ease-out_forwards];
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+} */
+.glassy-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.25);
+}
+
+.glassy-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-weight: 500;
+  outline: none;
+  transition: 0.3s;
+}
+.glassy-input:focus {
+  border-color: #ec4899;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+
+
+
+/* =========================== Experience ====================*/
+
