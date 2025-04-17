@@ -1,7 +1,6 @@
-
 // import Typewriter from 'react-typewriter-effect';
 // import profile from '../assets/pic.jpg';
-// import '@lottiefiles/lottie-player';
+import '@lottiefiles/lottie-player';
 // import '../App.css';
 
 // const Hero = () => {
@@ -62,7 +61,7 @@
 // export default Hero;
 
 
-import  Lottie  from 'react-lottie-player';
+// import  Lottie  from 'react-lottie-player';
 import profile from '../assets/pic.jpg';
 // import animationData from '../assets/animation.json'; // Your downloaded animation file
 import Typewriter from 'react-typewriter-effect';

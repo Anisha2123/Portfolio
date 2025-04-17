@@ -81,7 +81,7 @@
 
 import { useState } from 'react';
 import axios from 'axios';
-import { FaPaperPlane, FaUser, FaEnvelope, FaCommentDots, FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
+import { FaPaperPlane, FaUser, FaEnvelope, FaCommentDots, FaCheckCircle } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import "../App.css";
 
@@ -89,6 +89,7 @@ const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
+  // @ts-ignore
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleSubmit = async (e: any) => {
@@ -133,7 +134,7 @@ const Contact = () => {
           icon={<FaUser />}
           placeholder="Your Name"
           value={form.name}
-          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>setForm({ ...form, name: e.target.value })}
         />
 
         {/* Email */}
@@ -142,7 +143,7 @@ const Contact = () => {
           type="email"
           placeholder="Your Email"
           value={form.email}
-          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, email: e.target.value })}
         />
 
         {/* Message */}
@@ -151,7 +152,7 @@ const Contact = () => {
           placeholder="Your Message"
           isTextArea
           value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setForm({ ...form, message: e.target.value })}
         />
 
         {/* Submit */}

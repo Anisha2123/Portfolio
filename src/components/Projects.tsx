@@ -95,8 +95,20 @@
 
 import "../App.css";
 import { FaExternalLinkAlt, FaGithub, FaChartLine, FaTooth, FaBrain, FaGraduationCap, FaPalette } from "react-icons/fa";
+// import { loadFull } from "@tsparticles/engine";
+import { Engine } from "tsparticles-engine";
+// import { Engine } from "tsparticles-engine"; // ✅ right source
 import Particles from "react-tsparticles";
+// import { loadFull } from "@tsparticles/engine";
+// import { Engine } from "@tsparticles/engine";
+// import { loadFull } from "tsparticles";
+// import { loadFull } from "tsparticles";
+// import { Engine } from "tsparticles";
 import { loadFull } from "tsparticles";
+
+
+
+
 import { useCallback } from "react";
 
 const projects = [
@@ -164,9 +176,12 @@ const projects = [
 ];
 
 const Projects = () => {
-  const particlesInit = useCallback(async (main) => {
-    await loadFull(main);
+ 
+  const particlesInit = useCallback(async (engine: Engine) => {
+     // @ts-ignore
+    await loadFull(engine);
   }, []);
+  
 
   return (
     <section

@@ -10,7 +10,8 @@ const CustomCursor = () => {
   const [page, setPage] = useState("default");
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
+    const handleMouseMove = (e: MouseEvent) => {
+
       setPosition({ x: e.clientX, y: e.clientY });
     };
 
@@ -19,8 +20,10 @@ const CustomCursor = () => {
       setTimeout(() => setClicked(false), 200);
     };
 
-    const handleMouseOver = (e) => {
-      if (e.target.closest("a, button, input, textarea")) {
+    const handleMouseOver = (e: MouseEvent) => {
+      // if (e.target.closest("a, button, input, textarea")) {
+        const target = e.target as HTMLElement;
+        if (target?.closest("a, button, input, textarea")) {
         setHovering(true);
       } else {
         setHovering(false);
