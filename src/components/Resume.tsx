@@ -1,7 +1,8 @@
 
 
 import { FaDownload } from "react-icons/fa";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
+import ResumeA from "../assets/Anisha_Birla_Resume1.pdf";
 import "../App.css";
 
 const Resume = () => {
@@ -35,7 +36,7 @@ const Resume = () => {
         <motion.a
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.96 }}
-          href="/Anisha_Resume.pdf"
+          href={ResumeA}
           download
           className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-6 py-3 rounded-full font-medium shadow-lg transition-all duration-300 relative group overflow-hidden"
         >

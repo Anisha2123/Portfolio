@@ -94,7 +94,7 @@
 // export default Projects;
 
 import "../App.css";
-import { FaExternalLinkAlt, FaGithub, FaChartLine, FaTooth, FaBrain, FaGraduationCap } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaChartLine, FaTooth, FaBrain, FaGraduationCap, FaPalette } from "react-icons/fa";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
@@ -107,7 +107,7 @@ const projects = [
     description:
       "A full-stack stock trading website with AI-powered predictions, virtual trading, portfolio tracking, and real-time data using Yahoo Finance and Flask microservices.",
     date: "March 2025 - Present",
-    live: "https://stoxflow.vercel.app",
+    live: "https://stox-flow.vercel.app/",
     github: "https://github.com/Anisha2123/StoxFlow",
   },
   {
@@ -127,8 +127,8 @@ const projects = [
     description:
       "An online learning platform for data science and web dev with Stripe integration, role-based access, RESTful APIs, and admin dashboard.",
     date: "February 2025",
-    live: "https://topdatacoach.vercel.app",
-    github: "https://github.com/Anisha2123/TopDataCoach",
+    live: "https://topdatacoach.com/",
+    // github: "https://github.com/Anisha2123/TopDataCoach",
   },
   {
     title: "Job Auto-Apply System",
@@ -137,9 +137,30 @@ const projects = [
     description:
       "A MERN stack automation platform that auto-applies to jobs on LinkedIn and Internshala. Includes profile management, resume upload, Puppeteer-based automation, and MongoDB tracking.",
     date: "April 2025",
-    live: "https://jobautoapply.vercel.app",
-    github: "https://github.com/Anisha2123/JobAutoApply",
+    live: "https://job-portal-orcin-delta.vercel.app/",
+    github: "https://github.com/Anisha2123/Job_Portal",
   },
+  {
+    title: "PratibhaSkills",
+    icon: <FaGraduationCap />,
+    tech: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS"],
+    description:
+      "A MERN stack landing page for Pratibha Skill Development Center. Features dynamic course listings, contact form with Nodemailer, testimonials, and admin panel for content management.",
+    date: "April 2025",
+    live: "https://pratibhadev.vercel.app/",
+    github: "https://github.com/Anisha2123/Education_Website_Demo",
+  },
+  {
+    title: "Discord Color Generator",
+    icon: <FaPalette />,
+    tech: ["React", "TailwindCSS", "TypeScript"],
+    description:
+      "A responsive and animated color code generator for Discord themes. Users can preview and copy color combos, with sleek UI animations and accessibility features.",
+    date: "March 2025",
+    live: "https://video-dubber-task-tawny.vercel.app/",
+    github: "https://github.com/Anisha2123/VideoDubberTask",
+  },
+  
 ];
 
 const Projects = () => {

@@ -64,7 +64,7 @@
 
 import  Lottie  from 'react-lottie-player';
 import profile from '../assets/pic.jpg';
-import animationData from '../assets/animation.json'; // Your downloaded animation file
+// import animationData from '../assets/animation.json'; // Your downloaded animation file
 import Typewriter from 'react-typewriter-effect';
 import '../App.css';
 
@@ -76,7 +76,7 @@ const Hero = () => {
     >
       <div className="absolute top-0 left-0 w-full h-full z-[-1]">
         
-<Lottie animationData={animationData} loop  />
+{/* <Lottie animationData={animationData} loop  /> */}
       </div>
 
       <div className="max-w-4xl w-full text-center p-10 rounded-3xl shadow-[0_20px_50px_rgba(240,46,170,0.3)] dark:shadow-[0_20px_50px_rgba(255,255,255,0.1)] bg-white/50 dark:bg-gray-900/60 backdrop-blur-xl border border-white/30 dark:border-gray-700 transition-all duration-500 hover:scale-[1.02] animate-fade-in">

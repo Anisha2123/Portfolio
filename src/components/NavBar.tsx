@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { FaDownload, FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import ResumeA from "../assets/Anisha_Birla_Resume1.pdf";
 import '../App.css';
 
 const Navbar = () => {
@@ -51,7 +52,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <a href="/Anisha_Resume.pdf" download className="resume-btn">
+        <a href={ResumeA} download className="resume-btn">
           <FaDownload /> Resume
         </a>
       </div>

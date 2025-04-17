@@ -295,7 +295,7 @@ import {
   FaCss3Alt,
   FaGitAlt,
 } from 'react-icons/fa';
-import { SiMongodb, SiTailwindcss, SiTypescript, SiJavascript } from 'react-icons/si';
+import { SiMongodb, SiTailwindcss, SiTypescript, SiJavascript, SiVite } from 'react-icons/si';
 import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -307,8 +307,9 @@ import '../App.css';
 
 const allSkills = [
   { name: 'React.js', icon: <FaReact />, category: 'Frontend', level: 92 },
-  { name: 'TailwindCSS', icon: <SiTailwindcss />, category: 'Frontend', level: 88 },
+  { name: 'Vite.js', icon: <SiVite />, category: 'Frontend', level: 86 },
   { name: 'TypeScript', icon: <SiTypescript />, category: 'Frontend', level: 80 },
+  { name: 'TailwindCSS', icon: <SiTailwindcss />, category: 'Frontend', level: 88 },
   { name: 'JavaScript', icon: <SiJavascript />, category: 'Frontend', level: 90 },
   { name: 'HTML5', icon: <FaHtml5 />, category: 'Frontend', level: 95 },
   { name: 'CSS3', icon: <FaCss3Alt />, category: 'Frontend', level: 85 },
