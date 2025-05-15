@@ -104,7 +104,7 @@ const experiences = [
   {
     title: "4eDentalAI",
     date: "Jan 2025 - Feb 2025",
-    role: "Freelance MERN Stack Developer",
+    role: "Full Stack Developer",
     type: "Freelance",
     location: "Remote",
     link: "https://4edentalai.com/",

@@ -351,13 +351,30 @@ const Counter = ({ value }: { value: number }) => {
 
 const Skills = () => {
   const [selected, setSelected] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const skillsPerPage = 4;
 
   const handleFilterClick = (category: string) => {
     setSelected((prev) => (prev === category ? 'All' : category));
+    setCurrentPage(1); // reset to page 1 when filter changes
   };
 
   const filteredSkills =
     selected === 'All' ? allSkills : allSkills.filter((skill) => skill.category === selected);
+
+  const totalPages = Math.ceil(filteredSkills.length / skillsPerPage);
+  const paginatedSkills = filteredSkills.slice(
+    (currentPage - 1) * skillsPerPage,
+    currentPage * skillsPerPage
+  );
+
+  const handleNext = () => {
+    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  };
 
   return (
     <section id="skills" className="py-20 px-6 md:px-16 bg-gradient-to-br from-white via-blue-50 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-black">
@@ -402,8 +419,8 @@ const Skills = () => {
       </div>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 justify-items-center justify-center">
-        {filteredSkills.map((skill, index) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center justify-center">
+        {paginatedSkills.map((skill, index) => (
           <motion.div
             key={skill.name}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -432,9 +449,42 @@ const Skills = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-10 gap-4">
+  <button
+    onClick={handlePrevious}
+    disabled={currentPage === 1}
+    className="px-4 py-2 rounded text-white disabled:opacity-50
+               bg-gradient-to-r from-purple-500 to-pink-500
+               hover:from-purple-600 hover:to-pink-600
+               dark:from-purple-700 dark:to-pink-700
+               dark:hover:from-purple-800 dark:hover:to-pink-800
+               transition-colors"
+  >
+    Previous
+  </button>
+  <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
+    Page {currentPage} of {totalPages}
+  </p>
+  <button
+    onClick={handleNext}
+    disabled={currentPage === totalPages}
+    className="px-4 py-2 rounded text-white disabled:opacity-50
+               bg-gradient-to-r from-green-400 to-blue-500
+               hover:from-green-500 hover:to-blue-600
+               dark:from-green-600 dark:to-blue-700
+               dark:hover:from-green-700 dark:hover:to-blue-800
+               transition-colors"
+  >
+    Next
+  </button>
+</div>
+
     </section>
   );
 };
+
 
 export default Skills;
 

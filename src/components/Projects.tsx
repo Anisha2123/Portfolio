@@ -92,36 +92,33 @@
 // };
 
 // export default Projects;
-
 import "../App.css";
-import { FaExternalLinkAlt, FaGithub, FaChartLine, FaTooth, FaBrain, FaGraduationCap, FaPalette } from "react-icons/fa";
-// import { loadFull } from "@tsparticles/engine";
+import { useCallback, useState } from "react";
 import { Engine } from "tsparticles-engine";
-// import { Engine } from "tsparticles-engine"; // ✅ right source
 import Particles from "react-tsparticles";
-// import { loadFull } from "@tsparticles/engine";
-// import { Engine } from "@tsparticles/engine";
-// import { loadFull } from "tsparticles";
-// import { loadFull } from "tsparticles";
-// import { Engine } from "tsparticles";
 import { loadFull } from "tsparticles";
-import { FaChalkboardTeacher } from "react-icons/fa";
+import {
+  FaExternalLinkAlt,
+  FaGithub,
+  FaChartLine,
+  FaTooth,
+  FaBrain,
+  FaGraduationCap,
+  FaPalette,
+  FaChalkboardTeacher,
+} from "react-icons/fa";
 
-
-import { useCallback } from "react";
-
-const projects = [
+const allProjects = [
   {
-  title: "PSDC",
-  icon: <FaChalkboardTeacher />, // You can import this icon from react-icons/fa
-  tech: ["Angular", "Node.js", "MongoDB", "Razorpay", "AWS"],
-  description:
-    "A skill training platform for youth, built with Angular and Node.js. Features include course listing, admin dashboard, contact form, Razorpay payments, and full deployment on AWS.",
-  date: "May 2025 - Present",
-  live: "https://pratibhaskilldevelopment.com/",
-  github: "Private Repository (Institutional)"
-}
-,
+    title: "PSDC",
+    icon: <FaChalkboardTeacher />,
+    tech: ["Angular", "Node.js", "MongoDB", "Razorpay", "AWS"],
+    description:
+      "A skill training platform for youth, built with Angular and Node.js. Features include course listing, admin dashboard, contact form, Razorpay payments, and full deployment on AWS.",
+    date: "May 2025 - Present",
+    live: "https://pratibhaskilldevelopment.com/",
+    github: "Private Repository (Institutional)",
+  },
   {
     title: "4eDentalAI",
     icon: <FaTooth />,
@@ -140,9 +137,9 @@ const projects = [
       "An online learning platform for data science and web dev with Stripe integration, role-based access, RESTful APIs, and admin dashboard.",
     date: "February 2025",
     live: "https://topdatacoach.com/",
-    // github: "https://github.com/Anisha2123/TopDataCoach",
+    github: "Private Repository (Institutional)",
   },
-   {
+  {
     title: "StoxFlow",
     icon: <FaChartLine />,
     tech: ["React", "Node.js", "MongoDB", "Flask", "Yahoo Finance API"],
@@ -182,16 +179,29 @@ const projects = [
     live: "https://video-dubber-task-tawny.vercel.app/",
     github: "https://github.com/Anisha2123/VideoDubberTask",
   },
-  
 ];
 
 const Projects = () => {
- 
   const particlesInit = useCallback(async (engine: Engine) => {
-     // @ts-ignore
     await loadFull(engine);
   }, []);
-  
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 3;
+  const totalPages = Math.ceil(allProjects.length / projectsPerPage);
+
+  const currentProjects = allProjects.slice(
+    (currentPage - 1) * projectsPerPage,
+    currentPage * projectsPerPage
+  );
+
+  const handlePrev = () => {
+    setCurrentPage((prev) => Math.max(prev - 1, 1));
+  };
+
+  const handleNext = () => {
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  };
 
   return (
     <section
@@ -224,8 +234,8 @@ const Projects = () => {
           Featured Projects
         </h2>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 justify-center align-items-center">
-          {projects.map((proj) => (
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 justify-center">
+          {currentProjects.map((proj) => (
             <div
               key={proj.title}
               className="backdrop-blur-xs bg-white/80 dark:bg-gray-800/70 shadow-2xl rounded-2xl p-6 flex flex-col justify-between transition-all hover:shadow-pink-300 hover:-translate-y-2 hover:scale-[1.01] duration-300 group border border-pink-100 dark:border-purple-700"
@@ -238,7 +248,6 @@ const Projects = () => {
                 <p className="text-gray-700 dark:text-gray-200 mt-4 text-base leading-relaxed">
                   {proj.description}
                 </p>
-
                 <div className="flex flex-wrap gap-2 mt-3">
                   {proj.tech.map((tech) => (
                     <span
@@ -260,17 +269,59 @@ const Projects = () => {
                 >
                   Live <FaExternalLinkAlt size={14} />
                 </a>
-                <a
-                  href={proj.github}
-                  className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Code <FaGithub size={16} />
-                </a>
+                {proj.github && proj.github !== "Private Repository (Institutional)" ? (
+  <a
+    href={proj.github}
+    className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+    target="_blank"
+    rel="noreferrer"
+  >
+    Code <FaGithub size={16} />
+  </a>
+) : (
+  <p className="text-sm italic text-gray-500 dark:text-gray-400">
+    Institutional project – repository not public
+  </p>
+)}
+
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Pagination Controls */}
+        <div className="mt-10 flex justify-center items-center gap-6 text-sm font-medium text-gray-700 dark:text-gray-200">
+          <button
+            onClick={handlePrev}
+            disabled={currentPage === 1}
+            className={`px-4 py-2 rounded text-white disabled:opacity-50
+               bg-gradient-to-r from-purple-500 to-pink-500
+               hover:from-purple-600 hover:to-pink-600
+               dark:from-purple-700 dark:to-pink-700
+               dark:hover:from-purple-800 dark:hover:to-pink-800
+               transition-colors
+            }`}
+          >
+            Previous
+          </button>
+
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+
+          <button
+            onClick={handleNext}
+            disabled={currentPage === totalPages}
+            className={`px-4 py-2 rounded text-white disabled:opacity-50
+               bg-gradient-to-r from-green-400 to-blue-500
+               hover:from-green-500 hover:to-blue-600
+               dark:from-green-600 dark:to-blue-700
+               dark:hover:from-green-700 dark:hover:to-blue-800
+               transition-colors
+            `}
+          >
+            Next
+          </button>
         </div>
       </div>
     </section>
@@ -278,4 +329,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
