@@ -12,9 +12,10 @@ import '../App.css';
 const Hero = () => {
   return (
     <section
-      id="home"
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-100 via-white to-purple-100 dark:from-gray-900 dark:via-black dark:to-gray-800 px-4"
-    >
+  id="home"
+  className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 px-4"
+>
+
       <div className="absolute top-0 left-0 w-full h-full z-[-1]">
         
 {/* <Lottie animationData={animationData} loop  /> */}
