@@ -89,10 +89,25 @@ import Tilt from 'react-parallax-tilt';
 
 const experiences = [
   {
+    title: "Pratibha Skill Development Center",
+    date: "May 2025 - Present",
+    role: "Full Stack Developer (Angular & Node.js)",
+    type: "Full Time",
+    location: "Pune",
+    link: "https://pratibhaskilldevelopment.com/",
+    description: [
+      "Building a skill training platform for youth with scalable full-stack architecture.",
+      "Developing responsive UI, backend APIs, and admin dashboard for course management.",
+      "Integrated Razorpay for payments and deployed the platform on AWS."
+    ]
+  },
+  {
     title: "4eDentalAI",
     date: "Jan 2025 - Feb 2025",
     role: "Freelance MERN Stack Developer",
+    type: "Freelance",
     location: "Remote",
+    link: "https://4edentalai.com/",
     description: [
       "Developed an AI-powered dental assistant with X-ray analysis & cavity detection.",
       "Integrated Stripe, Calendly, and Brevo for payments, scheduling, and emails.",
@@ -103,6 +118,7 @@ const experiences = [
     title: "GirlScript Summer of Code (GSSoC) 2024",
     date: "Oct 2024 - Nov 2024",
     role: "Contributor",
+    type: "Part Time",
     location: "Remote",
     description: [
       "Contributed to open-source projects as part of the GSSoC 2024 initiative.",
@@ -141,10 +157,23 @@ const Experience = () => {
                   {/* Lighting effect */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-pink-500 via-purple-500 to-indigo-600 opacity-30 rounded-xl blur-sm z-[-1]" />
 
-                  <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-1">{exp.title}</h3>
+                  <h3 className="text-xl font-bold text-pink-600 dark:text-purple-400 mb-1">
+                    {exp.link ? (
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                        {exp.title}
+                      </a>
+                    ) : (
+                      exp.title
+                    )}
+                  </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-1 italic">{exp.date}</p>
                   <p className="text-base font-semibold text-gray-800 dark:text-white mb-1">{exp.role}</p>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">{exp.location}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-300 mb-1">{exp.location}</p>
+                  {exp.type && (
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                      <span className="font-medium">Type:</span> {exp.type}
+                    </p>
+                  )}
                   <ul className="list-none space-y-1 text-sm text-gray-700 dark:text-gray-200">
                     {exp.description.map((line, idx) => (
                       <li key={idx} className="flex items-center gap-2">
@@ -162,6 +191,7 @@ const Experience = () => {
     </section>
   );
 };
+
 
 export default Experience;
 
