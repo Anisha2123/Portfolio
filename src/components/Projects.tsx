@@ -105,23 +105,23 @@ import Particles from "react-tsparticles";
 // import { loadFull } from "tsparticles";
 // import { Engine } from "tsparticles";
 import { loadFull } from "tsparticles";
-
-
+import { FaChalkboardTeacher } from "react-icons/fa";
 
 
 import { useCallback } from "react";
 
 const projects = [
   {
-    title: "StoxFlow",
-    icon: <FaChartLine />,
-    tech: ["React", "Node.js", "MongoDB", "Flask", "Yahoo Finance API"],
-    description:
-      "A full-stack stock trading website with AI-powered predictions, virtual trading, portfolio tracking, and real-time data using Yahoo Finance and Flask microservices.",
-    date: "March 2025 - Present",
-    live: "https://stox-flow.vercel.app/",
-    github: "https://github.com/Anisha2123/StoxFlow",
-  },
+  title: "PSDC",
+  icon: <FaChalkboardTeacher />, // You can import this icon from react-icons/fa
+  tech: ["Angular", "Node.js", "MongoDB", "Razorpay", "AWS"],
+  description:
+    "A skill training platform for youth, built with Angular and Node.js. Features include course listing, admin dashboard, contact form, Razorpay payments, and full deployment on AWS.",
+  date: "May 2025 - Present",
+  live: "https://pratibhaskilldevelopment.com/",
+  github: "Private Repository (Institutional)"
+}
+,
   {
     title: "4eDentalAI",
     icon: <FaTooth />,
@@ -141,6 +141,16 @@ const projects = [
     date: "February 2025",
     live: "https://topdatacoach.com/",
     // github: "https://github.com/Anisha2123/TopDataCoach",
+  },
+   {
+    title: "StoxFlow",
+    icon: <FaChartLine />,
+    tech: ["React", "Node.js", "MongoDB", "Flask", "Yahoo Finance API"],
+    description:
+      "A full-stack stock trading website with AI-powered predictions, virtual trading, portfolio tracking, and real-time data using Yahoo Finance and Flask microservices.",
+    date: "March 2025 - Present",
+    live: "https://stox-flow.vercel.app/",
+    github: "https://github.com/Anisha2123/StoxFlow",
   },
   {
     title: "Job Auto-Apply System",
@@ -214,7 +224,7 @@ const Projects = () => {
           Featured Projects
         </h2>
 
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 justify-center">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 justify-center align-items-center">
           {projects.map((proj) => (
             <div
               key={proj.title}
