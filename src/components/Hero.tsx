@@ -4,7 +4,7 @@ import '@lottiefiles/lottie-player';
 
 // import  Lottie  from 'react-lottie-player';
 import profile from '../assets/pic.jpg';
-import bg from '../assets/bg.jpg';
+// import bg from '../assets/bg.jpg';
 // import animationData from '../assets/animation.json'; // Your downloaded animation file
 import Typewriter from 'react-typewriter-effect';
 import '../App.css';

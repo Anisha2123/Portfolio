@@ -90,9 +90,9 @@ import Tilt from 'react-parallax-tilt';
 const experiences = [
   {
     title: "Pratibha Skill Development Center",
-    date: "May 2025 - Present",
+    date: "May 2025 - Jun 2025",
     role: "Full Stack Developer (Angular & Node.js)",
-    type: "Full Time",
+    type: "Freelance",
     location: "Pune",
     link: "https://pratibhaskilldevelopment.com/",
     description: [

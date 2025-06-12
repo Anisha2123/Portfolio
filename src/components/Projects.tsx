@@ -93,10 +93,7 @@
 
 // export default Projects;
 import "../App.css";
-import { useCallback, useState } from "react";
-import { Engine } from "tsparticles-engine";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+import { useState } from "react";
 import {
   FaExternalLinkAlt,
   FaGithub,
@@ -115,7 +112,7 @@ const allProjects = [
     tech: ["Angular", "Node.js", "MongoDB", "Razorpay", "AWS"],
     description:
       "A skill training platform for youth, built with Angular and Node.js. Features include course listing, admin dashboard, contact form, Razorpay payments, and full deployment on AWS.",
-    date: "May 2025 - Present",
+    date: "May 2025 - Jun 2025",
     live: "https://pratibhaskilldevelopment.com/",
     github: "Private Repository (Institutional)",
   },
@@ -125,7 +122,7 @@ const allProjects = [
     tech: ["Angular", "Node.js", "MongoDB", "Stripe", "Calendly"],
     description:
       "An AI-powered dental assistant platform using Angular, Node.js, MongoDB. Includes X-ray analysis API, Stripe payments, Calendly scheduling, and real-time admin dashboards.",
-    date: "January 2025",
+    date: "Jan 2025 - Feb 2025",
     live: "https://4edentalai.com",
     github: "https://github.com/Anisha2123/4eDentalAI",
   },
@@ -135,7 +132,7 @@ const allProjects = [
     tech: ["MERN Stack", "Stripe", "Admin Dashboard", "REST API"],
     description:
       "An online learning platform for data science and web dev with Stripe integration, role-based access, RESTful APIs, and admin dashboard.",
-    date: "February 2025",
+    date: "Feb 2025 - Mar 2025",
     live: "https://topdatacoach.com/",
     github: "Private Repository (Institutional)",
   },
@@ -145,7 +142,7 @@ const allProjects = [
     tech: ["React", "Node.js", "MongoDB", "Flask", "Yahoo Finance API"],
     description:
       "A full-stack stock trading website with AI-powered predictions, virtual trading, portfolio tracking, and real-time data using Yahoo Finance and Flask microservices.",
-    date: "March 2025 - Present",
+    date: "Mar 2025 - Apr 2025",
     live: "https://stox-flow.vercel.app/",
     github: "https://github.com/Anisha2123/StoxFlow",
   },
@@ -155,7 +152,7 @@ const allProjects = [
     tech: ["React", "Node.js", "MongoDB", "Puppeteer", "Express"],
     description:
       "A MERN stack automation platform that auto-applies to jobs on LinkedIn and Internshala. Includes profile management, resume upload, Puppeteer-based automation, and MongoDB tracking.",
-    date: "April 2025",
+    date: "Apr 2025 - May 2025",
     live: "https://job-portal-orcin-delta.vercel.app/",
     github: "https://github.com/Anisha2123/Job_Portal",
   },
@@ -165,7 +162,7 @@ const allProjects = [
     tech: ["React", "Node.js", "MongoDB", "Express", "TailwindCSS"],
     description:
       "A MERN stack landing page for Pratibha Skill Development Center. Features dynamic course listings, contact form with Nodemailer, testimonials, and admin panel for content management.",
-    date: "April 2025",
+    date: "Apr 2025 - Apr 2025",
     live: "https://pratibhadev.vercel.app/",
     github: "https://github.com/Anisha2123/Education_Website_Demo",
   },
@@ -175,17 +172,13 @@ const allProjects = [
     tech: ["React", "TailwindCSS", "TypeScript"],
     description:
       "A responsive and animated color code generator for Discord themes. Users can preview and copy color combos, with sleek UI animations and accessibility features.",
-    date: "March 2025",
+    date: "Mar 2025 - Mar 2025",
     live: "https://video-dubber-task-tawny.vercel.app/",
     github: "https://github.com/Anisha2123/VideoDubberTask",
   },
 ];
 
 const Projects = () => {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadFull(engine);
-  }, []);
-
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 3;
   const totalPages = Math.ceil(allProjects.length / projectsPerPage);
@@ -208,27 +201,6 @@ const Projects = () => {
       id="projects"
       className="relative py-20 px-4 md:px-10 bg-gradient-to-b from-pink-50 to-white dark:from-gray-900 dark:to-black overflow-hidden"
     >
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        className="absolute inset-0 z-0"
-        options={{
-          background: { color: { value: "transparent" } },
-          fpsLimit: 60,
-          interactivity: {
-            events: { onHover: { enable: true, mode: "repulse" } },
-            modes: { repulse: { distance: 100, duration: 0.4 } },
-          },
-          particles: {
-            color: { value: "#ec4899" },
-            links: { enable: true, color: "#ec4899", distance: 150 },
-            move: { enable: true, speed: 1 },
-            size: { value: { min: 1, max: 3 } },
-            opacity: { value: 0.5 },
-          },
-        }}
-      />
-
       <div className="relative z-10">
         <h2 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-12 animate-fade-in-up">
           Featured Projects
@@ -270,20 +242,19 @@ const Projects = () => {
                   Live <FaExternalLinkAlt size={14} />
                 </a>
                 {proj.github && proj.github !== "Private Repository (Institutional)" ? (
-  <a
-    href={proj.github}
-    className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
-    target="_blank"
-    rel="noreferrer"
-  >
-    Code <FaGithub size={16} />
-  </a>
-) : (
-  <p className="text-sm italic text-gray-500 dark:text-gray-400">
-    Institutional project – repository not public
-  </p>
-)}
-
+                  <a
+                    href={proj.github}
+                    className="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Code <FaGithub size={16} />
+                  </a>
+                ) : (
+                  <p className="text-sm italic text-gray-500 dark:text-gray-400">
+                    Institutional project – repository not public
+                  </p>
+                )}
               </div>
             </div>
           ))}
