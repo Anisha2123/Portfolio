@@ -56,7 +56,7 @@ const Hero = () => {
         multiText={[
           'Former Full Stack Developer',
           '400+ LeetCode Problems (Top 15%)',
-          'Upcoming SDE @ PalTech | Full Stack Developer @ PSDC',
+          'Upcoming SDE @ PalTech | Former Full Stack Developer @ PSDC',
         ]}
         multiTextDelay={2000}
         typeSpeed={60}
