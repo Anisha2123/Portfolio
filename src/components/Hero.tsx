@@ -54,9 +54,9 @@ const Hero = () => {
         startDelay={500}
         cursorColor="#EC4899"
         multiText={[
-          'Full Stack Developer',
+          'Former Full Stack Developer',
           '400+ LeetCode Problems (Top 15%)',
-          'Full Stack Developer @ PSDC | Upcoming SDE @ PalTech',
+          'Upcoming SDE @ PalTech | Full Stack Developer @ PSDC',
         ]}
         multiTextDelay={2000}
         typeSpeed={60}
