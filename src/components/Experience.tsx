@@ -90,7 +90,7 @@ import Tilt from 'react-parallax-tilt';
 const experiences = [
   {
     title: "Paltech",
-    date: "June 2025 - Current",
+    date: "Jul 2025 - Current",
     role: "Trainee Data Engineer",
     type: "Full Time",
     location: "Hyderabad",
