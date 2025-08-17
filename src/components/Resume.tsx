@@ -2,7 +2,7 @@
 
 import { FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion"
-import ResumeA from "../assets/Anisha_Birla_resume.pdf";
+import ResumeA from "../assets/Anisha_Birla_Resume1.pdf";
 import "../App.css";
 
 const Resume = () => {
