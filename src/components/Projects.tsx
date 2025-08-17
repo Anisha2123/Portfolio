@@ -124,7 +124,7 @@ const allProjects = [
       "An AI-powered dental assistant platform using Angular, Node.js, MongoDB. Includes X-ray analysis API, Stripe payments, Calendly scheduling, and real-time admin dashboards.",
     date: "Jan 2025 - Feb 2025",
     live: "https://4edentalai.com",
-    github: "https://github.com/Anisha2123/4eDentalAI",
+    github: "Private Repository (Institutional)",
   },
   {
     title: "TopDataCoach",

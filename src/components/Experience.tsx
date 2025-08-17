@@ -89,6 +89,19 @@ import Tilt from 'react-parallax-tilt';
 
 const experiences = [
   {
+    title: "Paltech",
+    date: "June 2025 - Current",
+    role: "Trainee Data Engineer",
+    type: "Full Time",
+    location: "Hyderabad",
+    link: "https://www.pal.tech/",
+    description: [
+"Developed and optimized SQL Data Warehouse solutions for large-scale data processing",
+"Built scalable ETL pipelines using Databricks and PySpark for data integration and transformation",
+"Implemented performance tuning and data quality checks to ensure reliable analytics delivery"
+    ]
+  },
+  {
     title: "Pratibha Skill Development Center",
     date: "May 2025 - Jun 2025",
     role: "Full Stack Developer (Angular & Node.js)",
@@ -99,19 +112,6 @@ const experiences = [
       "Building a skill training platform for youth with scalable full-stack architecture.",
       "Developing responsive UI, backend APIs, and admin dashboard for course management.",
       "Integrated Razorpay for payments and deployed the platform on AWS."
-    ]
-  },
-  {
-    title: "4eDentalAI",
-    date: "Jan 2025 - Feb 2025",
-    role: "Full Stack Developer",
-    type: "Freelance",
-    location: "Remote",
-    link: "https://4edentalai.com/",
-    description: [
-      "Developed an AI-powered dental assistant with X-ray analysis & cavity detection.",
-      "Integrated Stripe, Calendly, and Brevo for payments, scheduling, and emails.",
-      "Built secure role-based authentication and deployed on AWS."
     ]
   },
   {
